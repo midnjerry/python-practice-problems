@@ -11,7 +11,7 @@ class Problem088:
         j = n - 1
         k = m + n - 1
         while(j >= 0):
-            if (nums1[i] > nums2[j]):
+            if (i >= 0 and nums1[i] > nums2[j]):
                 nums1[k] = nums1[i]
                 i=i-1
             else:
@@ -35,4 +35,9 @@ if __name__ == '__main__':
     nums1 = [0]
     solution.merge(nums1, 0, [1], 1)
     print(f'Expected Result: [1]')
+    print(f'Result: {nums1}')
+
+    nums1 = [2, 0]
+    solution.merge(nums1, 1, [1], 1)
+    print(f'Expected Result: [1, 2]')
     print(f'Result: {nums1}')
